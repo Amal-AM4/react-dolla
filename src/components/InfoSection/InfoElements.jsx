@@ -7,7 +7,8 @@ export const InfoContainer = styled.div.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop)
 })`
   color: #fff;
-  background: ${({ lightBg }) => (lightBg ? "#f9f9f9" : "#010606")};
+
+  background-color: ${({lightBg}) => (lightBg ? "#f9f9f9" : "#010606")};
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -41,7 +42,7 @@ export const InfoRow = styled.div.withConfig({
 
   @media screen and (max-width: 768px) {
     grid-template-areas: ${({ imgStart }) =>
-      imgStart ? `'col1 col2'` : `'col1 col1' 'col2 col2'`};
+      imgStart ? `'col1' 'col2'` : `'col1 col1' 'col2 col2'`};
   }
 `;
 
