@@ -1,16 +1,23 @@
 // InfoElements.jsx
 import styled from "styled-components";
+import isPropValid from "@emotion/is-prop-valid";
 
-export const InfoContainer = styled.div`
+// InfoContainer
+export const InfoContainer = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   color: #fff;
-  background: ${({ $lightBg }) => ($lightBg ? "#f9f9f9" : "#010606")};
+  background: ${({ lightBg }) => (lightBg ? "#f9f9f9" : "#010606")};
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
   }
 `;
 
-export const InfoWrapper = styled.div`
+// InfoWrapper
+export const InfoWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   display: grid;
   z-index: 1;
   height: 860px;
@@ -22,7 +29,10 @@ export const InfoWrapper = styled.div`
   justify-content: center;
 `;
 
-export const InfoRow = styled.div`
+// InfoRow
+export const InfoRow = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
@@ -35,25 +45,36 @@ export const InfoRow = styled.div`
   }
 `;
 
-export const Column1 = styled.div`
+// Columns
+export const Column1 = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: col1;
 `;
 
-export const Column2 = styled.div`
+export const Column2 = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   margin-bottom: 15px;
   padding: 0 15px;
   grid-area: col2;
 `;
 
-export const TextWrapper = styled.div`
+// TextWrapper
+export const TextWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
 `;
 
-export const TopLine = styled.p`
+// TopLine
+export const TopLine = styled.p.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   color: #01bf71;
   font-size: 16px;
   line-height: 16px;
@@ -63,38 +84,52 @@ export const TopLine = styled.p`
   margin-bottom: 16px;
 `;
 
-export const Heading = styled.h1`
+// Heading
+export const Heading = styled.h1.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   margin-bottom: 24px;
   font-size: 48px;
   line-height: 1.1;
   font-weight: 600;
-  color: ${(lightText) =>
-    lightText ? "#f7f8fa" : "#010606"}; // correct way to declare prompt
+  color: ${({ lightText }) => (lightText ? "#f7f8fa" : "#010606")};
 
   @media screen and (max-width: 480px) {
     font-size: 32px;
   }
 `;
 
-export const Subtitle = styled.p`
+// Subtitle
+export const Subtitle = styled.p.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   max-width: 440px;
   margin-bottom: 35px;
   font-size: 18px;
   line-height: 24px;
-  color: ${(darkText) => (darkText ? "#f7f8fa" : "#010606")};
+  color: ${({ darkText }) => (darkText ? "#010606" : "#fff")};
 `;
 
-export const BtnWrap = styled.div`
+// BtnWrap
+export const BtnWrap = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   display: flex;
   justify-content: flex-start;
 `;
 
-export const ImgWrap = styled.div`
+// ImgWrap
+export const ImgWrap = styled.div.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   max-width: 555px;
   height: 100%;
 `;
 
-export const Img = styled.img`
+// Img
+export const Img = styled.img.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
   width: 100%;
   margin: 0 0 10px 0;
   padding-right: 0;
