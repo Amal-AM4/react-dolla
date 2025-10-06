@@ -1,9 +1,12 @@
 import styled from 'styled-components'
+import isPropValid from "@emotion/is-prop-valid";
 
 import { Link as LinkR } from 'react-router-dom'
 import { Link as LinkS } from 'react-scroll'
 
-export const Nav = styled.nav`
+export const Nav = styled.nav.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop)
+})`
     background-color: ${({scrollNav}) => (scrollNav ? '#000' : 'transparent')};
     height: 80px;
     margin-top: -80px;
